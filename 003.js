@@ -4,7 +4,7 @@
 // What is the largest prime factor of the given number?
 
 function largestPrimeFactor(n) {
-    let primes = getArrays(n);
+    let primes = getPrimes(n);
     let primeFactors = [];
 
     let number = n;
@@ -21,7 +21,7 @@ function largestPrimeFactor(n) {
     return primeFactors[primeFactors.length - 1];
 }
 
-function getArrays(n) {
+function getPrimes(n) {
     let primes = [];
     for (let i = 1; i <= n; i++) {
         if (isPrime(i)) primes.push(i);
@@ -37,6 +37,4 @@ function isPrime(n) {
 }
 
 
-console.log(largestPrimeFactor(13195));
-
-largestPrimeFactor(13195);
+console.log(largestPrimeFactor(1319500));
