@@ -5,20 +5,24 @@
 
 function smallestMult(n) {
 
-    // Tomo un número
-    // ¿Es divisible entre 2 ?
-    // ¿Es divisible entre 3 ?
-    // ...
-    // Si es divisible entre todos esos números -> Devuélvelo
-    // ¿No lo es? --> Pasa al siguiente número
+    let number = n - 1;
+    let divisible;
 
-    let number = n;
-    for (let i = 2; i <= n; i++) {
-        if (n % i === 1){
-            console.log("Se divide entre " + i);
+    do {
+        divisible = true;
+        // Check all numbers
+        for (let i = 2; i <= n; i++) {
+            // If one of them has remainder...
+            if (number % i !== 0) {
+                divisible = false;
+                // Stop it and check next number
+                number++;
+                break;
+            };
         }
-    }
-    return console.log("Finished!");
+    } while (!divisible && factorial(n))
+
+    return number;
 }
 
 function factorial(number) {
@@ -28,5 +32,5 @@ function factorial(number) {
     return number * factorial(number - 1);
 }
 
-console.log(smallestMult(10));
-// smallestMult(20);
+// console.log(smallestMult(20));
+smallestMult(20);
