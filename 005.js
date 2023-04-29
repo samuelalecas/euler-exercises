@@ -3,6 +3,8 @@
 
 // What is the smallest positive number that is evenly divisible by all of the numbers from 1 to n?
 
+// UPDATE: Refactor is needed to pass FreeCodeCamp's tests...
+
 function smallestMult(n) {
 
     let number = n - 1;
@@ -10,7 +12,7 @@ function smallestMult(n) {
 
     do {
         divisible = true;
-        // Check all numbers
+        // Check all numbers (from 2 to n)
         for (let i = 2; i <= n; i++) {
             // If one of them has remainder...
             if (number % i !== 0) {
